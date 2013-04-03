@@ -10,6 +10,8 @@
  */
 package br.uninove.visual;
 
+import java.awt.Desktop;
+import java.io.File;
 import javax.swing.JFrame;
 
 /**
@@ -61,6 +63,11 @@ public class GuiPrincipal extends javax.swing.JFrame {
 
         mnuItemManual.setMnemonic('s');
         mnuItemManual.setText("Manual");
+        mnuItemManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemManualActionPerformed(evt);
+            }
+        });
         mnuApoio.add(mnuItemManual);
 
         mnuItemSair.setMnemonic('x');
@@ -136,6 +143,15 @@ public class GuiPrincipal extends javax.swing.JFrame {
             guiOS.setVisible(true);
         }
     }//GEN-LAST:event_mnuItemOSActionPerformed
+
+    private void mnuItemManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemManualActionPerformed
+        try{
+            File pdf=new File(new File("").getAbsolutePath()+"/docs/Manual_OS.pdf");
+            Desktop.getDesktop().open(pdf);
+        }catch(Exception e){
+            e.printStackTrace();
+            }
+    }//GEN-LAST:event_mnuItemManualActionPerformed
    /**
      * @param args the command line arguments
      */
