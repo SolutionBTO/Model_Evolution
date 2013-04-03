@@ -146,16 +146,12 @@ public class GuiPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItemOSActionPerformed
 
     private void mnuItemManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemManualActionPerformed
-        File pdf = new File(new File("").getAbsolutePath() + "/Manual_os.pdf");
-        try {
+        try{
+            File pdf=new File(new File("").getAbsolutePath()+"/docs/Manual_OS.pdf");
             Desktop.getDesktop().open(pdf);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-             JOptionPane.showMessageDialog(null, 
-                       "Ocorreu um erro, causa: "+ex.getMessage(),
-                       "Ordem de Serviço",
-                       JOptionPane.ERROR_MESSAGE);
-        }
+        }catch(Exception e){
+            e.printStackTrace();
+            }
     }//GEN-LAST:event_mnuItemManualActionPerformed
    /**
      * @param args the command line arguments
